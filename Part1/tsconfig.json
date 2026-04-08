@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "strict": true,
+    "outFile": "./main.js",
+    "ignoreDeprecations": "6.0"
+  },
+  "include": ["main.ts"]
+}

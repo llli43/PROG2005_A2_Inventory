@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Inventory System - Part 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📦 Inventory Management System</h1>
+
+        <!-- Add / Edit Item Form -->
+        <div class="form-section">
+            <h2>Add / Edit Item</h2>
+            <input type="text" id="itemId" placeholder="Item ID (unique)" required>
+            <input type="text" id="itemName" placeholder="Item Name" required>
+            <select id="category">
+                <option value="Electronics">Electronics</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Tools">Tools</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+            <input type="number" id="quantity" placeholder="Quantity" required>
+            <input type="number" id="price" step="0.01" placeholder="Price" required>
+            <input type="text" id="supplier" placeholder="Supplier Name" required>
+            <select id="stockStatus">
+                <option value="In Stock">In Stock</option>
+                <option value="Low Stock">Low Stock</option>
+                <option value="Out of Stock">Out of Stock</option>
+            </select>
+            <select id="popularItem">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <input type="text" id="comment" placeholder="Comment (optional)">
+            <button id="addBtn">Add Item</button>
+            <button id="updateBtn">Update Item (by Name)</button>
+        </div>
+
+        <!-- Search and Delete Area -->
+        <div class="action-section">
+            <input type="text" id="searchName" placeholder="Search by item name">
+            <button id="searchBtn">Search</button>
+            <button id="clearSearchBtn">Clear Search</button>
+            <hr>
+            <input type="text" id="deleteName" placeholder="Delete by item name">
+            <button id="deleteBtn">Delete Item</button>
+        </div>
+
+        <!-- Display Area -->
+        <div class="display-section">
+            <button id="showAllBtn">Show All Items</button>
+            <button id="showPopularBtn">Show Popular Items</button>
+            <div id="outputArea" class="output"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
