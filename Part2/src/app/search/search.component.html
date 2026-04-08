@@ -1,0 +1,56 @@
+<!--
+  Filename: search.component.html
+  Author: Dongxu Li
+  Assignment Module: PROG2005 Assignment 2 - Part 2 (Angular)
+  
+  Description:
+  Search page template. Provides item search functionality and results display.
+-->
+
+<div class="search-container">
+  <h2>Search Inventory</h2>
+  
+  <!-- Search Input Area -->
+  <div class="search-box">
+    <input 
+      type="text" 
+      [(ngModel)]="keyword" 
+      placeholder="Enter item name to search..."
+      (keyup.enter)="search()">
+    <button (click)="search()" class="btn-primary">Search</button>
+    <button (click)="clearSearch()" class="btn-secondary">Clear</button>
+  </div>
+
+  <!-- Message -->
+  <div *ngIf="message" class="message">{{ message }}</div>
+
+  <!-- Search Results Table -->
+  <div *ngIf="results.length > 0" class="results-table">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Supplier</th>
+          <th>Stock</th>
+          <th>Popular</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of results">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>${{ item.price | number:'1.2-2' }}</td>
+          <td>{{ item.supplier }}</td>
+          <td>{{ item.stockStatus }}</td>
+          <td>{{ item.popularItem }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

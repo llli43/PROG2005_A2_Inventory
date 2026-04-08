@@ -1,0 +1,37 @@
+<!--
+  Filename: home.component.html
+  Author: Dongxu Li
+  Student ID:24832300
+  Assignment Module: PROG2005 Assignment 2 - Part 2 (Angular)
+  
+  Description:
+  Home page template. Displays application introduction and feature navigation.
+-->
+
+<div class="home-container">
+  <h1>Inventory Management System</h1>
+  
+  <p>Welcome to the <strong>Harvey Norman style inventory manager</strong>.</p>
+  <p>This application helps you manage product stock, suppliers, pricing, and popularity status.</p>
+  
+  <h2>Features</h2>
+  <ul>
+    <li>Add new items (unique ID required)</li>
+    <li>Update items by name</li>
+    <li>Delete items with confirmation</li>
+    <li>Search items by name</li>
+    <li>View only popular items</li>
+    <li>Display all items in a responsive table</li>
+  </ul>
+  
+  <h2>Mobile Responsive</h2>
+  <p>Designed to work perfectly on both narrow (mobile) and wide (desktop) screens.</p>
+  
+  <h2>Privacy & Security</h2>
+  <p>All data stays in your browser session. No server-side storage.</p>
+  <p>See the <a routerLink="/privacy">Privacy page</a> for details.</p>
+  
+  <div class="action-buttons">
+    <a routerLink="/inventory" class="btn btn-primary">Go to Inventory</a>
+  </div>
+</div>

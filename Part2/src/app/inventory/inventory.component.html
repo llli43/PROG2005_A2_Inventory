@@ -1,0 +1,93 @@
+<!--
+  Filename: inventory.component.html
+  Author: Dongxu Li
+  Student ID:24832300
+  Assignment Module: PROG2005 Assignment 2 - Part 2 (Angular)
+  
+  Description:
+  Inventory management page template. Provides UI for CRUD operations.
+-->
+
+<div class="inventory-container">
+  <h2>Inventory Management</h2>
+
+  <!-- Add/Edit Form -->
+  <div class="form-section">
+    <h3>Add / Edit Item</h3>
+    <div class="form-grid">
+      <input type="text" [(ngModel)]="formData.id" placeholder="Item ID (unique)" required>
+      <input type="text" [(ngModel)]="formData.name" placeholder="Item Name" required>
+      <select [(ngModel)]="formData.category">
+        <option value="Electronics">Electronics</option>
+        <option value="Furniture">Furniture</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Tools">Tools</option>
+        <option value="Miscellaneous">Miscellaneous</option>
+      </select>
+      <input type="number" [(ngModel)]="formData.quantity" placeholder="Quantity" required>
+      <input type="number" [(ngModel)]="formData.price" step="0.01" placeholder="Price" required>
+      <input type="text" [(ngModel)]="formData.supplier" placeholder="Supplier Name" required>
+      <select [(ngModel)]="formData.stockStatus">
+        <option value="In Stock">In Stock</option>
+        <option value="Low Stock">Low Stock</option>
+        <option value="Out of Stock">Out of Stock</option>
+      </select>
+      <select [(ngModel)]="formData.popularItem">
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+      <input type="text" [(ngModel)]="formData.comment" placeholder="Comment (optional)">
+    </div>
+    <div class="button-group">
+      <button (click)="addItem()" class="btn-add">Add Item</button>
+      <button (click)="updateItem()" class="btn-update">Update Item</button>
+    </div>
+  </div>
+
+  <!-- Delete Section -->
+  <div class="delete-section">
+    <input type="text" [(ngModel)]="deleteName" placeholder="Delete by item name">
+    <button (click)="deleteItem()" class="btn-delete">Delete Item</button>
+  </div>
+
+  <!-- Display Controls -->
+  <div class="display-controls">
+    <button (click)="showAllItems()" class="btn-view">Show All Items</button>
+    <button (click)="showPopularItems()" class="btn-view">Show Popular Items</button>
+  </div>
+
+  <!-- Message -->
+  <div *ngIf="message" class="message">{{ message }}</div>
+
+  <!-- Items Table -->
+  <div class="table-container" *ngIf="displayItems.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Supplier</th>
+          <th>Stock</th>
+          <th>Popular</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of displayItems">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.category }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>${{ item.price | number:'1.2-2' }}</td>
+          <td>{{ item.supplier }}</td>
+          <td>{{ item.stockStatus }}</td>
+          <td>{{ item.popularItem }}</td>
+          <td>{{ item.comment || '' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

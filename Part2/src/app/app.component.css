@@ -1,0 +1,41 @@
+/******************************************************************************
+ * Filename: app.component.css
+ * Author: Dongxu Li
+ * Student ID:24832300
+ * Assignment Module: PROG2005 Assignment 2 - Part 2 (Angular)
+ * 
+ * Description:
+ * Navigation bar stylesheet.
+ ******************************************************************************/
+
+nav {
+  background-color: #1a365d;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+nav a:hover {
+  background-color: #2c5282;
+}
+
+nav a.active {
+  background-color: #3182ce;
+}
+
+@media (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 5px 0;
+  }
+}

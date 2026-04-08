@@ -1,0 +1,51 @@
+/******************************************************************************
+ * Filename: help.component.css
+ * Author: Dongxu Li
+ * Student ID:24832300
+ * Assignment Module: PROG2005 Assignment 2 - Part 2 (Angular)
+ * 
+ * Description:
+ * Help page stylesheet.
+ ******************************************************************************/
+
+.help-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #1a365d;
+  margin-bottom: 30px;
+}
+
+.faq-item {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item h3 {
+  color: #2c5282;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  line-height: 1.8;
+  color: #4a5568;
+  margin-left: 0;
+}
+
+@media (max-width: 600px) {
+  .help-container {
+    margin: 10px;
+    padding: 15px;
+  }
+}
